@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/json,application/xml,application/xhtml+xml,text/html,text/xml,text/plain,application/javascript,application/font-sfnt,application/font-woff,application/font-woff2
+spring:
+  http:
+    multipart:
+      max-file-size: 128MB
+      max-request-size: 128MB
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: knowledge
+  jpa:
+    hibernate:
+      ddl-auto: 'create-drop'
+
