@@ -2,30 +2,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Upload Demo</title>
-    <link href="/jslib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/jslib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="/jslib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/jslib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
 
-    <link href="/jslib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/jslib/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="/jslib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/jslib/toastr/toastr.min.css" rel="stylesheet"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"
+          media="all"/>
 </head>
 
 <body>
-
-<div ng-app="client" ng-controller="clientController">
-
-
-    <h1>Intents On Servers</h1>
-    <p>There are <b>{{products.length}} products</b> on Server.</p>
-    <br />
-    <hr />
-
-
-    <input class="form-control" type = "file" product-excel-upload ng-model="productExcel"/>
-    <button ng-click="uploadProductExcel()">Upload Excel</button>
-
-    <br />
-    <hr />
-
+<div class="content">
+    <div class="card">
+        <div ng-app="client" ng-controller="clientController">
+            <h1>Upload File</h1>
+            <div class="container">
+                <input class="form-control" type="file" product-excel-upload ng-model="productExcel"/>
+                <button class="btn" ng-click="uploadProductExcel()">Upload Excel</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="/webjars/sockjs-client/0.3.4/sockjs.min.js"></script>
